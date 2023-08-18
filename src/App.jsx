@@ -9,54 +9,48 @@ function App() {
   const handleInputValue = (e) => {
     e.preventDefault();
 
-    switch (e.target.value) {
+    const value = e.target.name;
+
+    switch (value) {
       case "AC":
         setInput("0");
         break;
+      case "undefined":
+        setInput("");
+        break;
+      case "delete":
+        setInput((prevInput) => prevInput?.slice(0, prevInput.length - 1));
+        break;
       case "=":
         try {
-          setInput(eval(input).toString());
+          setInput((prevInput) => eval(prevInput).toString());
         } catch (error) {
           setInput("Error");
         }
         break;
-      case "delete":
-        setInput(input?.slice(0, input.length - 1));
-
-        break;
       default:
-        setInput(input.concat(e.target.value));
+        setInput((prevInput) =>
+          prevInput === "0" ? value : prevInput + value
+        );
     }
   };
+
   useEffect(() => {
-    if (input === "NaN" || input == "0") {
-      setInput("0");
-    }
-    if (input === "Error" || input == "") {
-      setInput("0");
-    }
-    if (input === "delete" && input == "0") {
-      setInput("0");
-    }
-    if (input === "/" || input == "") {
-      setInput("0");
-    }
-    if (input === "*" || input == "") {
-      setInput("0");
-    }
-    if (input === "%" || input == "") {
-      setInput("0");
-    }
-    if (input === "-" || input == "") {
-      setInput("0");
-    }
-    if (input === "+" || input == "") {
-      setInput("0");
-    }
-    if (input === "=" || input == "") {
+    if (
+      input === "NaN" ||
+      input === "Error" ||
+      input === "delete" ||
+      input === "/" ||
+      input === "*" ||
+      input === "%" ||
+      input === "-" ||
+      input === "+" ||
+      input === "="
+    ) {
       setInput("0");
     }
   }, [input]);
+
   return (
     <>
       <div className=" container-fluid w-screen h-screen flex justify-center">
@@ -81,118 +75,118 @@ function App() {
                       <div className="gorup1 flex justify-between">
                         <button
                           onClick={handleInputValue}
-                          value={"AC"}
+                          name="AC"
                           className=" cursor-pointer text-gray hover:text-white  rounded-xl transition delay-50 hover:scale-125 bg-gradient-to-t from-gray-500 to-gray-200 text-lg font-bold  shadow-lg hover:from-pink-500 hover:to-purple-500 p-5 hover:p-8 w-16"
                         >
                           AC
                         </button>
                         <button
                           onClick={handleInputValue}
-                          value={"/"}
+                          name="/"
                           className=" cursor-pointer text-gray hover:text-white  rounded-xl transition delay-50 hover:scale-125 bg-gradient-to-t from-gray-500 to-gray-200 text-lg font-bold  shadow-lg hover:from-pink-500 hover:to-purple-500 p-5 w-16"
                         >
-                          <FiDivide />
+                          <FiDivide className="cursor-not-allowed" />
                         </button>
                         <button
                           onClick={handleInputValue}
-                          value={"*"}
+                          name="*"
                           className=" cursor-pointer text-gray hover:text-white  rounded-xl transition delay-50 hover:scale-125 bg-gradient-to-t from-gray-500 to-gray-200 text-lg font-bold  shadow-lg hover:from-pink-500 hover:to-purple-500 p-5 w-16"
                         >
-                          <FiX />
+                          <FiX className="cursor-not-allowed" />
                         </button>
                         <button
                           onClick={handleInputValue}
-                          value={"delete"}
+                          name="delete"
                           className=" cursor-pointer text-gray hover:text-white  rounded-xl transition delay-50 hover:scale-125 bg-gradient-to-t from-gray-500 to-gray-200 text-lg font-bold  shadow-lg hover:from-pink-500 hover:to-purple-500 p-5 w-16"
                         >
-                          <FiDelete />
+                          <FiDelete className="cursor-not-allowed" />
                         </button>
                       </div>
                       <div className="gorup2 flex justify-between">
                         <button
                           onClick={handleInputValue}
-                          value={7}
+                          name="7"
                           className=" cursor-pointer text-gray hover:text-white  rounded-xl transition delay-50 hover:scale-125 bg-gradient-to-t from-gray-500 to-gray-200 text-lg font-bold  shadow-lg hover:from-pink-500 hover:to-purple-500 p-5 w-16"
                         >
                           7
                         </button>
                         <button
                           onClick={handleInputValue}
-                          value={8}
+                          name="8"
                           className=" cursor-pointer text-gray hover:text-white  rounded-xl transition delay-50 hover:scale-125 bg-gradient-to-t from-gray-500 to-gray-200 text-lg font-bold  shadow-lg hover:from-pink-500 hover:to-purple-500 p-5 w-16"
                         >
                           8
                         </button>
                         <button
                           onClick={handleInputValue}
-                          value={9}
+                          name="9"
                           className=" cursor-pointer text-gray hover:text-white  rounded-xl transition delay-50 hover:scale-125 bg-gradient-to-t from-gray-500 to-gray-200 text-lg font-bold  shadow-lg hover:from-pink-500 hover:to-purple-500 p-5 w-16"
                         >
                           9
                         </button>
                         <button
                           onClick={handleInputValue}
-                          value={"-"}
+                          name="-"
                           className=" cursor-pointer text-gray hover:text-white  rounded-xl transition delay-50 hover:scale-125 bg-gradient-to-t from-gray-500 to-gray-200 text-lg font-bold  shadow-lg hover:from-pink-500 hover:to-purple-500 p-5 w-16"
                         >
-                          <FiMinus />
+                          <FiMinus className="cursor-not-allowed" />
                         </button>
                       </div>
                       <div className="gorup3 flex justify-between">
                         <button
                           onClick={handleInputValue}
-                          value={4}
+                          name="4"
                           className=" cursor-pointer text-gray hover:text-white  rounded-xl transition delay-50 hover:scale-125 bg-gradient-to-t from-gray-500 to-gray-200 text-lg font-bold  shadow-lg hover:from-pink-500 hover:to-purple-500 p-5 w-16"
                         >
                           4
                         </button>
                         <button
                           onClick={handleInputValue}
-                          value={5}
+                          name="5"
                           className=" cursor-pointer text-gray hover:text-white  rounded-xl transition delay-50 hover:scale-125 bg-gradient-to-t from-gray-500 to-gray-200 text-lg font-bold  shadow-lg hover:from-pink-500 hover:to-purple-500 p-5 w-16"
                         >
                           5
                         </button>
                         <button
                           onClick={handleInputValue}
-                          value={6}
+                          name="6"
                           className=" cursor-pointer text-gray hover:text-white  rounded-xl transition delay-50 hover:scale-125 bg-gradient-to-t from-gray-500 to-gray-200 text-lg font-bold  shadow-lg hover:from-pink-500 hover:to-purple-500 p-5 w-16"
                         >
                           6
                         </button>
                         <button
                           onClick={handleInputValue}
-                          value={"+"}
+                          name="+"
                           className=" cursor-pointer text-gray hover:text-white  rounded-xl transition delay-50 hover:scale-125 bg-gradient-to-t from-gray-500 to-gray-200 text-lg font-bold  shadow-lg hover:from-pink-500 hover:to-purple-500 p-5 w-16"
                         >
-                          <FiPlus />
+                          <FiPlus className="cursor-not-allowed" />
                         </button>
                       </div>
                       <div className="gorup4 flex justify-between">
                         <button
                           onClick={handleInputValue}
-                          value={1}
+                          name="1"
                           className=" cursor-pointer text-gray hover:text-white  rounded-xl transition delay-50 hover:scale-125 bg-gradient-to-t from-gray-500 to-gray-200 text-lg font-bold  shadow-lg hover:from-pink-500 hover:to-purple-500 p-5 w-16"
                         >
                           1
                         </button>
                         <button
                           onClick={handleInputValue}
-                          value={2}
+                          name="2"
                           className=" cursor-pointer text-gray hover:text-white  rounded-xl transition delay-50 hover:scale-125 bg-gradient-to-t from-gray-500 to-gray-200 text-lg font-bold  shadow-lg hover:from-pink-500 hover:to-purple-500 p-5 w-16"
                         >
                           2
                         </button>
                         <button
                           onClick={handleInputValue}
-                          value={3}
+                          name="3"
                           className=" cursor-pointer text-gray hover:text-white  rounded-xl transition delay-50 hover:scale-125 bg-gradient-to-t from-gray-500 to-gray-200 text-lg font-bold  shadow-lg hover:from-pink-500 hover:to-purple-500 p-5 w-16"
                         >
                           3
                         </button>
                         <button
                           onClick={handleInputValue}
-                          value={"sin"}
+                          name="sin"
                           className=" cursor-pointer text-gray hover:text-white  rounded-xl transition delay-50 hover:scale-125 bg-gradient-to-t from-gray-500 to-gray-200 text-lg font-bold  shadow-lg hover:from-pink-500 hover:to-purple-500 p-5 w-16"
                         >
                           Sin
@@ -201,31 +195,31 @@ function App() {
                       <div className="gorup5 flex justify-between">
                         <button
                           onClick={handleInputValue}
-                          value={"."}
+                          name="."
                           className=" cursor-pointer text-gray hover:text-white  rounded-xl transition delay-50 hover:scale-125 bg-gradient-to-t from-gray-500 to-gray-200 text-lg font-bold  shadow-lg hover:from-pink-500 hover:to-purple-500 p-5 w-16"
                         >
-                          <PiDotOutlineFill />
+                          <PiDotOutlineFill className="cursor-not-allowed" />
                         </button>
                         <button
                           onClick={handleInputValue}
-                          value={1}
+                          name="1"
                           className=" cursor-pointer text-gray hover:text-white  rounded-xl transition delay-50 hover:scale-125 bg-gradient-to-t from-gray-500 to-gray-200 text-lg font-bold  shadow-lg hover:from-pink-500 hover:to-purple-500 p-5 w-16"
                         >
                           1
                         </button>
                         <button
                           onClick={handleInputValue}
-                          value={"%"}
+                          name="%"
                           className=" cursor-pointer text-gray hover:text-white  rounded-xl transition delay-50 hover:scale-125 bg-gradient-to-t from-gray-500 to-gray-200 text-lg font-bold  shadow-lg hover:from-pink-500 hover:to-purple-500 p-5 w-16"
                         >
                           %
                         </button>
                         <button
                           onClick={handleInputValue}
-                          value={"="}
+                          name="="
                           className=" cursor-pointer text-gray hover:text-white  rounded-xl transition delay-50 hover:scale-125 bg-gradient-to-t from-gray-500 to-gray-200 text-lg font-bold  shadow-lg hover:from-pink-500 hover:to-purple-500 p-5 w-16"
                         >
-                          <FaEquals />
+                          <FaEquals className="cursor-not-allowed" />
                         </button>
                       </div>
                     </div>
