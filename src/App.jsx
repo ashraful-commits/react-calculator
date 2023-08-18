@@ -205,10 +205,10 @@ function App() {
                         </button>
                         <button
                           onClick={handleInputValue}
-                          name="1"
+                          name="0"
                           className=" text-gray hover:text-white  rounded-xl transition delay-50 hover:scale-125 bg-gradient-to-t from-gray-500 to-gray-200 text-lg font-bold  shadow-lg hover:from-pink-500 hover:to-purple-500 p-5 w-16"
                         >
-                          1
+                          0
                         </button>
                         <button
                           onClick={handleInputValue}
