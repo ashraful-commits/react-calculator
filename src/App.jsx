@@ -18,6 +18,9 @@ function App() {
       case "undefined":
         setInput("");
         break;
+      case "NaN":
+        setInput("");
+        break;
       case "delete":
         setInput((prevInput) => prevInput?.slice(0, prevInput.length - 1));
         break;
@@ -76,28 +79,28 @@ function App() {
                         <button
                           onClick={handleInputValue}
                           name="AC"
-                          className=" cursor-pointer text-gray hover:text-white  rounded-xl transition delay-50 hover:scale-125 bg-gradient-to-t from-gray-500 to-gray-200 text-lg font-bold  shadow-lg hover:from-pink-500 hover:to-purple-500 p-5 hover:p-8 w-16"
+                          className=" text-gray hover:text-white  rounded-xl transition delay-50 hover:scale-125 bg-gradient-to-t from-gray-500 to-gray-200 text-lg font-bold  shadow-lg hover:from-pink-500 hover:to-purple-500 p-5 hover:p-8 w-16"
                         >
                           AC
                         </button>
                         <button
                           onClick={handleInputValue}
                           name="/"
-                          className=" cursor-pointer text-gray hover:text-white  rounded-xl transition delay-50 hover:scale-125 bg-gradient-to-t from-gray-500 to-gray-200 text-lg font-bold  shadow-lg hover:from-pink-500 hover:to-purple-500 p-5 w-16"
+                          className=" text-gray hover:text-white  rounded-xl transition delay-50 hover:scale-125 bg-gradient-to-t from-gray-500 to-gray-200 text-lg font-bold  shadow-lg hover:from-pink-500 hover:to-purple-500 p-5 w-16"
                         >
                           <FiDivide className="cursor-not-allowed" />
                         </button>
                         <button
                           onClick={handleInputValue}
                           name="*"
-                          className=" cursor-pointer text-gray hover:text-white  rounded-xl transition delay-50 hover:scale-125 bg-gradient-to-t from-gray-500 to-gray-200 text-lg font-bold  shadow-lg hover:from-pink-500 hover:to-purple-500 p-5 w-16"
+                          className=" text-gray hover:text-white  rounded-xl transition delay-50 hover:scale-125 bg-gradient-to-t from-gray-500 to-gray-200 text-lg font-bold  shadow-lg hover:from-pink-500 hover:to-purple-500 p-5 w-16"
                         >
                           <FiX className="cursor-not-allowed" />
                         </button>
                         <button
                           onClick={handleInputValue}
                           name="delete"
-                          className=" cursor-pointer text-gray hover:text-white  rounded-xl transition delay-50 hover:scale-125 bg-gradient-to-t from-gray-500 to-gray-200 text-lg font-bold  shadow-lg hover:from-pink-500 hover:to-purple-500 p-5 w-16"
+                          className=" text-gray hover:text-white  rounded-xl transition delay-50 hover:scale-125 bg-gradient-to-t from-gray-500 to-gray-200 text-lg font-bold  shadow-lg hover:from-pink-500 hover:to-purple-500 p-5 w-16"
                         >
                           <FiDelete className="cursor-not-allowed" />
                         </button>
@@ -106,28 +109,28 @@ function App() {
                         <button
                           onClick={handleInputValue}
                           name="7"
-                          className=" cursor-pointer text-gray hover:text-white  rounded-xl transition delay-50 hover:scale-125 bg-gradient-to-t from-gray-500 to-gray-200 text-lg font-bold  shadow-lg hover:from-pink-500 hover:to-purple-500 p-5 w-16"
+                          className=" text-gray hover:text-white  rounded-xl transition delay-50 hover:scale-125 bg-gradient-to-t from-gray-500 to-gray-200 text-lg font-bold  shadow-lg hover:from-pink-500 hover:to-purple-500 p-5 w-16"
                         >
                           7
                         </button>
                         <button
                           onClick={handleInputValue}
                           name="8"
-                          className=" cursor-pointer text-gray hover:text-white  rounded-xl transition delay-50 hover:scale-125 bg-gradient-to-t from-gray-500 to-gray-200 text-lg font-bold  shadow-lg hover:from-pink-500 hover:to-purple-500 p-5 w-16"
+                          className=" text-gray hover:text-white  rounded-xl transition delay-50 hover:scale-125 bg-gradient-to-t from-gray-500 to-gray-200 text-lg font-bold  shadow-lg hover:from-pink-500 hover:to-purple-500 p-5 w-16"
                         >
                           8
                         </button>
                         <button
                           onClick={handleInputValue}
                           name="9"
-                          className=" cursor-pointer text-gray hover:text-white  rounded-xl transition delay-50 hover:scale-125 bg-gradient-to-t from-gray-500 to-gray-200 text-lg font-bold  shadow-lg hover:from-pink-500 hover:to-purple-500 p-5 w-16"
+                          className=" text-gray hover:text-white  rounded-xl transition delay-50 hover:scale-125 bg-gradient-to-t from-gray-500 to-gray-200 text-lg font-bold  shadow-lg hover:from-pink-500 hover:to-purple-500 p-5 w-16"
                         >
                           9
                         </button>
                         <button
                           onClick={handleInputValue}
                           name="-"
-                          className=" cursor-pointer text-gray hover:text-white  rounded-xl transition delay-50 hover:scale-125 bg-gradient-to-t from-gray-500 to-gray-200 text-lg font-bold  shadow-lg hover:from-pink-500 hover:to-purple-500 p-5 w-16"
+                          className=" text-gray hover:text-white  rounded-xl transition delay-50 hover:scale-125 bg-gradient-to-t from-gray-500 to-gray-200 text-lg font-bold  shadow-lg hover:from-pink-500 hover:to-purple-500 p-5 w-16"
                         >
                           <FiMinus className="cursor-not-allowed" />
                         </button>
@@ -136,28 +139,28 @@ function App() {
                         <button
                           onClick={handleInputValue}
                           name="4"
-                          className=" cursor-pointer text-gray hover:text-white  rounded-xl transition delay-50 hover:scale-125 bg-gradient-to-t from-gray-500 to-gray-200 text-lg font-bold  shadow-lg hover:from-pink-500 hover:to-purple-500 p-5 w-16"
+                          className=" text-gray hover:text-white  rounded-xl transition delay-50 hover:scale-125 bg-gradient-to-t from-gray-500 to-gray-200 text-lg font-bold  shadow-lg hover:from-pink-500 hover:to-purple-500 p-5 w-16"
                         >
                           4
                         </button>
                         <button
                           onClick={handleInputValue}
                           name="5"
-                          className=" cursor-pointer text-gray hover:text-white  rounded-xl transition delay-50 hover:scale-125 bg-gradient-to-t from-gray-500 to-gray-200 text-lg font-bold  shadow-lg hover:from-pink-500 hover:to-purple-500 p-5 w-16"
+                          className=" text-gray hover:text-white  rounded-xl transition delay-50 hover:scale-125 bg-gradient-to-t from-gray-500 to-gray-200 text-lg font-bold  shadow-lg hover:from-pink-500 hover:to-purple-500 p-5 w-16"
                         >
                           5
                         </button>
                         <button
                           onClick={handleInputValue}
                           name="6"
-                          className=" cursor-pointer text-gray hover:text-white  rounded-xl transition delay-50 hover:scale-125 bg-gradient-to-t from-gray-500 to-gray-200 text-lg font-bold  shadow-lg hover:from-pink-500 hover:to-purple-500 p-5 w-16"
+                          className=" text-gray hover:text-white  rounded-xl transition delay-50 hover:scale-125 bg-gradient-to-t from-gray-500 to-gray-200 text-lg font-bold  shadow-lg hover:from-pink-500 hover:to-purple-500 p-5 w-16"
                         >
                           6
                         </button>
                         <button
                           onClick={handleInputValue}
                           name="+"
-                          className=" cursor-pointer text-gray hover:text-white  rounded-xl transition delay-50 hover:scale-125 bg-gradient-to-t from-gray-500 to-gray-200 text-lg font-bold  shadow-lg hover:from-pink-500 hover:to-purple-500 p-5 w-16"
+                          className=" text-gray hover:text-white  rounded-xl transition delay-50 hover:scale-125 bg-gradient-to-t from-gray-500 to-gray-200 text-lg font-bold  shadow-lg hover:from-pink-500 hover:to-purple-500 p-5 w-16"
                         >
                           <FiPlus className="cursor-not-allowed" />
                         </button>
@@ -166,28 +169,28 @@ function App() {
                         <button
                           onClick={handleInputValue}
                           name="1"
-                          className=" cursor-pointer text-gray hover:text-white  rounded-xl transition delay-50 hover:scale-125 bg-gradient-to-t from-gray-500 to-gray-200 text-lg font-bold  shadow-lg hover:from-pink-500 hover:to-purple-500 p-5 w-16"
+                          className=" text-gray hover:text-white  rounded-xl transition delay-50 hover:scale-125 bg-gradient-to-t from-gray-500 to-gray-200 text-lg font-bold  shadow-lg hover:from-pink-500 hover:to-purple-500 p-5 w-16"
                         >
                           1
                         </button>
                         <button
                           onClick={handleInputValue}
                           name="2"
-                          className=" cursor-pointer text-gray hover:text-white  rounded-xl transition delay-50 hover:scale-125 bg-gradient-to-t from-gray-500 to-gray-200 text-lg font-bold  shadow-lg hover:from-pink-500 hover:to-purple-500 p-5 w-16"
+                          className=" text-gray hover:text-white  rounded-xl transition delay-50 hover:scale-125 bg-gradient-to-t from-gray-500 to-gray-200 text-lg font-bold  shadow-lg hover:from-pink-500 hover:to-purple-500 p-5 w-16"
                         >
                           2
                         </button>
                         <button
                           onClick={handleInputValue}
                           name="3"
-                          className=" cursor-pointer text-gray hover:text-white  rounded-xl transition delay-50 hover:scale-125 bg-gradient-to-t from-gray-500 to-gray-200 text-lg font-bold  shadow-lg hover:from-pink-500 hover:to-purple-500 p-5 w-16"
+                          className=" text-gray hover:text-white  rounded-xl transition delay-50 hover:scale-125 bg-gradient-to-t from-gray-500 to-gray-200 text-lg font-bold  shadow-lg hover:from-pink-500 hover:to-purple-500 p-5 w-16"
                         >
                           3
                         </button>
                         <button
                           onClick={handleInputValue}
                           name="sin"
-                          className=" cursor-pointer text-gray hover:text-white  rounded-xl transition delay-50 hover:scale-125 bg-gradient-to-t from-gray-500 to-gray-200 text-lg font-bold  shadow-lg hover:from-pink-500 hover:to-purple-500 p-5 w-16"
+                          className=" text-gray hover:text-white  rounded-xl transition delay-50 hover:scale-125 bg-gradient-to-t from-gray-500 to-gray-200 text-lg font-bold  shadow-lg hover:from-pink-500 hover:to-purple-500 p-5 w-16"
                         >
                           Sin
                         </button>
@@ -196,28 +199,28 @@ function App() {
                         <button
                           onClick={handleInputValue}
                           name="."
-                          className=" cursor-pointer text-gray hover:text-white  rounded-xl transition delay-50 hover:scale-125 bg-gradient-to-t from-gray-500 to-gray-200 text-lg font-bold  shadow-lg hover:from-pink-500 hover:to-purple-500 p-5 w-16"
+                          className=" text-gray hover:text-white  rounded-xl transition delay-50 hover:scale-125 bg-gradient-to-t from-gray-500 to-gray-200 text-lg font-bold  shadow-lg hover:from-pink-500 hover:to-purple-500 p-5 w-16"
                         >
                           <PiDotOutlineFill className="cursor-not-allowed" />
                         </button>
                         <button
                           onClick={handleInputValue}
                           name="1"
-                          className=" cursor-pointer text-gray hover:text-white  rounded-xl transition delay-50 hover:scale-125 bg-gradient-to-t from-gray-500 to-gray-200 text-lg font-bold  shadow-lg hover:from-pink-500 hover:to-purple-500 p-5 w-16"
+                          className=" text-gray hover:text-white  rounded-xl transition delay-50 hover:scale-125 bg-gradient-to-t from-gray-500 to-gray-200 text-lg font-bold  shadow-lg hover:from-pink-500 hover:to-purple-500 p-5 w-16"
                         >
                           1
                         </button>
                         <button
                           onClick={handleInputValue}
                           name="%"
-                          className=" cursor-pointer text-gray hover:text-white  rounded-xl transition delay-50 hover:scale-125 bg-gradient-to-t from-gray-500 to-gray-200 text-lg font-bold  shadow-lg hover:from-pink-500 hover:to-purple-500 p-5 w-16"
+                          className=" text-gray hover:text-white  rounded-xl transition delay-50 hover:scale-125 bg-gradient-to-t from-gray-500 to-gray-200 text-lg font-bold  shadow-lg hover:from-pink-500 hover:to-purple-500 p-5 w-16"
                         >
                           %
                         </button>
                         <button
                           onClick={handleInputValue}
                           name="="
-                          className=" cursor-pointer text-gray hover:text-white  rounded-xl transition delay-50 hover:scale-125 bg-gradient-to-t from-gray-500 to-gray-200 text-lg font-bold  shadow-lg hover:from-pink-500 hover:to-purple-500 p-5 w-16"
+                          className=" text-gray hover:text-white  rounded-xl transition delay-50 hover:scale-125 bg-gradient-to-t from-gray-500 to-gray-200 text-lg font-bold  shadow-lg hover:from-pink-500 hover:to-purple-500 p-5 w-16"
                         >
                           <FaEquals className="cursor-not-allowed" />
                         </button>
