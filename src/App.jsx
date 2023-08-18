@@ -26,7 +26,12 @@ function App() {
         break;
       case "=":
         try {
-          setInput((prevInput) => eval(prevInput).toString());
+          const result = eval(input);
+          if (isNaN(result)) {
+            setInput("Error");
+          } else {
+            setInput(result.toString());
+          }
         } catch (error) {
           setInput("Error");
         }
